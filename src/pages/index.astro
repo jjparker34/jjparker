@@ -1,16 +1,241 @@
 ---
-
+const socialLinks = [
+  { name: "GitHub", url: "https://github.com/jjparker34" },
+  { name: "Substack", url: "https://substack.com/@jjparker34" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/jivon-parker-8486591b9" },
+  { name: "Twitter / X", url: "https://x.com/Jparker1738" },
+];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Jivon Parker</title>
+  </head>
+  <body>
+    <main class="page">
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <p class="tagline">Coach • Football Analytics • Writing</p>
+          <h1 class="title">Jivon Parker</h1>
+          <p class="subtitle">
+            A place to store my articles, takes, interests and anything else.
+          </p>
+        </div>
+
+        <div class="socials">
+          {socialLinks.map((link) => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.name}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- SECTIONS -->
+      <section class="grid">
+        <div class="card">
+          <h2>About</h2>
+          <p>
+            I’m a defensive coordinator at Midland Christian High School and a
+            2024 Baylor graduate (Information Systems + Analytics). I’m trying
+            to blend coaching and analytics into one path.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Football & Analytics</h2>
+          <p>
+            I work on things like formation tendencies, R/P splits, third down
+            planning, and ways to make data actually usable for coaches on
+            Friday nights.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Writing</h2>
+          <p>
+            I write about football, analytics, and whatever else is on my mind.
+            Most of that lives on Substack for now.
+          </p>
+          <a
+            class="button secondary"
+            href="https://substack.com/@jjparker34"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read on Substack
+          </a>
+        </div>
+
+        <div class="card">
+          <h2>Contact</h2>
+          <p>
+            Want to talk ball, data, teaching, or projects? Reach out anytime.
+          </p>
+          <a class="button primary" href="mailto:your@email.com">
+            Email me
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
+
+<style>
+  :root {
+    --bg: #050816;
+    --bg-alt: #0b1020;
+    --text: #f9fafb;
+    --muted: #9ca3af;
+    --accent: #38bdf8;
+    --accent-soft: rgba(56, 189, 248, 0.15);
+    --border: #1f2933;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    background: radial-gradient(circle at top, #0f172a 0, #020617 50%, #020617);
+    color: var(--text);
+  }
+
+  .page {
+    min-height: 100vh;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: clamp(2.8rem, 6vw, 3.8rem);
+    margin: 0 0 0.75rem;
+  }
+
+  .subtitle {
+    max-width: 40rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+  }
+
+  .socials a {
+    font-size: 0.95rem;
+    color: var(--accent);
+    text-decoration: none;
+    position: relative;
+  }
+
+  .socials a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.15rem;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.18s ease-out;
+  }
+
+  .socials a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .card {
+    background: var(--bg-alt);
+    border-radius: 1rem;
+    padding: 1.5rem 1.6rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+  }
+
+  .card h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .card p {
+    margin: 0 0 1rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.16s ease-out, border-color 0.16s ease-out,
+      transform 0.08s ease-out;
+  }
+
+  .button.primary {
+    background: var(--accent);
+    color: #020617;
+    border-color: var(--accent);
+  }
+
+  .button.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.35);
+  }
+
+  .button.secondary {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .button.secondary:hover {
+    background: rgba(56, 189, 248, 0.25);
+    transform: translateY(-1px);
+  }
+</style>
