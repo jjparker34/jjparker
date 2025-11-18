@@ -3,7 +3,7 @@ const socialLinks = [
   { name: "GitHub", url: "https://github.com/jjparker34" },
   { name: "Substack", url: "https://substack.com/@jjparker34" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/jivon-parker-8486591b9" },
-  { name: "Twitter / X", url: "https://x.com/Jparker1738" },
+  { name: "Twitter", url: "https://x.com/Jparker1738" },
 ];
 ---
 
@@ -15,7 +15,10 @@ const socialLinks = [
     <title>Jivon Parker</title>
   </head>
   <body>
-    <main class="page">
+    
+	<div class="header-image"></div>
+
+	<main class="page">
       <!-- HERO -->
       <section class="hero">
         <div>
@@ -42,41 +45,55 @@ const socialLinks = [
           <p>
             I’m a defensive coordinator at Midland Christian High School and a
             2024 Baylor graduate (Information Systems + Analytics). I’m trying
-            to blend coaching and analytics into one path.
+            to blend coaching and analytics into one.
           </p>
         </div>
 
         <div class="card">
-          <h2>Football & Analytics</h2>
+          <h2>Football & Analytics Projects:</h2>
           <p>
-            I work on things like formation tendencies, R/P splits, third down
-            planning, and ways to make data actually usable for coaches on
-            Friday nights.
           </p>
-        </div>
-
-        <div class="card">
-          <h2>Writing</h2>
-          <p>
-            I write about football, analytics, and whatever else is on my mind.
-            Most of that lives on Substack for now.
-          </p>
-          <a
+		  <a
             class="button secondary"
-            href="https://substack.com/@jjparker34"
+            href="https://github.com/jjparker34/PFFpressureplot"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            Read on Substack
-          </a>
+			>
+            2022 PFF Pressure Plotter
+        </a>
+		<a
+            class="button secondary"
+            href="https://github.com/jjparker34/RookieQBReport"
+            target="_blank"
+            rel="noopener noreferrer"
+			>
+            2024 Rookie QB Report
+        </a>
+		<a
+            class="button secondary"
+            href="https://campus2canton.com/how-important-is-winning-the-elite-11/"
+            target="_blank"
+            rel="noopener noreferrer"
+			>
+            Elite 11 Analysis
+        </a>
+		<a
+            class="button secondary"
+            href="https://substack.com/home/post/p-157494844"
+            target="_blank"
+            rel="noopener noreferrer"
+			>
+            Mahomes vs. Brady
+        </a>
+
         </div>
 
         <div class="card">
           <h2>Contact</h2>
           <p>
-            Want to talk ball, data, teaching, or projects? Reach out anytime.
+            Want to talk ball? Email me!
           </p>
-          <a class="button primary" href="mailto:your@email.com">
+          <a class="button primary" href="jjparker28tx@gmail.com">
             Email me
           </a>
         </div>
@@ -238,4 +255,16 @@ const socialLinks = [
     background: rgba(56, 189, 248, 0.25);
     transform: translateY(-1px);
   }
+
+.header-image {
+  width: 100%;
+  height: 300px;              /* adjust height here */
+  background-image: url('header.JPG');   /* path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 2rem;
+  border-radius: 0 0 16px 16px; /* optional: curved bottom */
+}
 </style>
