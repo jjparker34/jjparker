@@ -109,25 +109,35 @@ const formattedDate = `${month}/${day}/${year}`;
               </tr>
               </table>
             </section>
-
             <section class="panel">
-              <div class="panel-subheader grey-subheader">CRUZ</div>
+              <div class="panel-subheader grey-subheader">RESUMES</div>
+
               <table class="panel-table small">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <tr><td>{i + 1}</td><td></td></tr>
-                ))}
+
+                <tr>
+                  <td class="link-text">
+                    <a href="/resume/Jivon ParkerResume11-11.pdf" target="_blank">
+                      Technical Resume
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="link-text">
+                    <a href="/resume/FootballResume11-10.pdf" target="_blank">
+                      Coaching Resume
+                    </a>
+                  </td>
+                </tr>
+
               </table>
             </section>
-
-            <section class="panel">
-              <div class="panel-subheader grey-subheader">BY</div>
-              <table class="panel-table small">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <tr><td>{i + 1}</td><td></td></tr>
-                ))}
-              </table>
+                        <!-- ⭐ TOPSTERS PANEL ⭐ -->
+            <section class="panel topsters-panel">
+              <div class="topsters-content">
+                <img src="/twoptchart.png" alt="two pt chart" />
+              </div>
             </section>
-
           </div>
 
           <!-- MIDDLE COLUMN -->
@@ -449,7 +459,7 @@ const formattedDate = `${month}/${day}/${year}`;
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;         
+  bottom: -1.3px;         
   width: 100%;
   height: 2px;
   background-color: currentColor;
@@ -478,6 +488,5 @@ const formattedDate = `${month}/${day}/${year}`;
   border: 1px solid #000;
   font-weight: 700;
 }
-
 
 </style>
