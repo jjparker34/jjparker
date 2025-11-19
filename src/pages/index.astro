@@ -39,23 +39,74 @@ const formattedDate = `${month}/${day}/${year}`;
           <div class="col col-left">
 
             <section class="panel">
-              <div class="panel-header black-header">About Me:</div>
-              <table class="panel-table">
-                <tr><th>#</th><th>Play</th></tr>
-                {Array.from({ length: 10 }).map((_, i) => (
-                  <tr><td>{i + 1}</td><td></td></tr>
-                ))}
-              </table>
+            <div class="panel-header black-header">About Me:</div>
+            <div class="about-me-static">
+              Hi, I'm Jivon Parker. Here's a place where I'll store my links, articles, takes, and intersets.
+              I'm currently the defenseive coordinator at Midland Christian. This website is based off my own callsheet
+              and thought it would be a fun way to design my website. 
+            </div>
+          </section>
             </section>
-
+            <!-- Links -->
             <section class="panel">
-              <div class="panel-header green-header">PLAYERS NOT PLAYS! (RUNS)</div>
+              <div class="panel-header green-header">Links:</div>
               <table class="panel-table">
-                <tr><th>Player</th><th>Notes</th></tr>
-                <tr><td>STOCK</td><td></td></tr>
-                {Array.from({ length: 4 }).map(() => (
-                  <tr><td></td><td></td></tr>
-                ))}
+              <tr>
+                <td class="link-text">
+                  <a href="https://www.linkedin.com/in/jivon-parker-8486591b9" target="_blank">
+                    LinkedIn
+                  </a>
+                </td>
+
+                <td class="icon-cell small-icon-cell">
+                  <a href="https://www.linkedin.com/in/jivon-parker-8486591b9" target="_blank">
+                    <img src="/icons/Linkedin.png" class="icon-img" />
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="link-text">
+                  <a href="https://x.com/Jparker1738" target="_blank">Twitter</a>
+                </td>
+                <td class="icon-cell small-icon-cell">
+                  <a href="https://x.com/Jparker1738" target="_blank">
+                    <img src="/icons/Twitter.png" class="icon-img" />
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="link-text">
+                  <a href="https://github.com/jjparker34" target="_blank">GitHub</a>
+                </td>
+                <td class="icon-cell small-icon-cell">
+                  <a href="https://github.com/jjparker34" target="_blank">
+                    <img src="/icons/Github.png" class="icon-img" />
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="link-text">
+                  <a href="https://substack.com/@jjparker34" target="_blank">Substack</a>
+                </td>
+                <td class="icon-cell small-icon-cell">
+                  <a href="https://substack.com/@jjparker34" target="_blank">
+                    <img src="/icons/SubStack.png" class="icon-img" />
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="link-text">
+                  <a href="https://substack.com/@jjparker34" target="_blank">Spotify</a>
+                </td>
+                <td class="icon-cell small-icon-cell">
+                  <a href="https://open.spotify.com/user/1254738071" target="_blank">
+                    <img src="/icons/Spotify.png" class="icon-img" />
+                  </a>
+                </td>
+              </tr>
               </table>
             </section>
 
@@ -155,7 +206,7 @@ const formattedDate = `${month}/${day}/${year}`;
               <div class="panel-header black-header">First 10</div>
               <table class="panel-table">
                 <tr><th>#</th><th>Play</th></tr>
-                {Array.from({ length: 10 }).map((_, i) => (
+                {Array.from({ length: 9 }).map((_, i) => (
                   <tr><td>{i + 1}</td><td></td></tr>
                 ))}
               </table>
@@ -164,8 +215,10 @@ const formattedDate = `${month}/${day}/${year}`;
             <section class="panel">
               <div class="panel-header green-header">Players not Plays (PASS)</div>
               <table class="panel-table">
-                <tr><th>Player</th><th>Notes</th></tr>
+                <tr><th>Player</th>
                 <tr><td>STOCK</td><td></td></tr>
+                <tr><td>STOCK</td><td></td></tr>
+                
                 {Array.from({ length: 4 }).map(() => (
                   <tr><td></td><td></td></tr>
                 ))}
@@ -174,7 +227,7 @@ const formattedDate = `${month}/${day}/${year}`;
 
             <!-- ⭐ TOPSTERS PANEL ⭐ -->
             <section class="panel topsters-panel">
-              <div class="panel-subheader grey-subheader">Topsters – Music</div>
+              <div class="panel-subheader grey-subheader">Monthly Chart</div>
               <div class="topsters-content">
                 <img src="/topster.png" alt="Top music collage" />
               </div>
@@ -229,15 +282,15 @@ const formattedDate = `${month}/${day}/${year}`;
   }
 
   .sheet {
-  background: var(--bg-sheet);
-  border: 4px solid var(--border);
-  max-width: 1280px;
-  max-height: 834px;
-  width: 100%;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
-  height: auto;         
-  overflow: hidden;     
-}
+    background: var(--bg-sheet);
+    border: 4px solid var(--border);
+    max-width: 1280px;
+    width: 100%;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    height: 833px;
+    min-height: 100;
+    overflow: hidden;
+  }
 
   /* HEADER */
   .sheet-top {
@@ -279,9 +332,11 @@ const formattedDate = `${month}/${day}/${year}`;
 
   /* MAIN GRID */
   .sheet-grid {
-    display: grid;
-    grid-template-columns: 260px 1fr 260px;
-  }
+  display: grid;
+  grid-template-columns: 260px 1fr 260px; /* Left / Middle / Right */
+  gap: 0;
+  align-items: start;
+}
 
   .col {
     border-left: 4px solid var(--border);
@@ -375,5 +430,54 @@ const formattedDate = `${month}/${day}/${year}`;
     object-fit: contain;
     display: block;
   }
+
+.icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.link-text a {
+  position: relative;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;  
+  color: #0050c8;
+}
+
+.link-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;         
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  
+  transform: scaleX(0);   
+  transform-origin: left;
+  transition: transform 0.25s ease-out;
+}
+
+.link-text a:hover::after {
+  transform: scaleX(1);
+}
+
+.small-icon-cell {
+  width: 40px;        
+  text-align: center;
+  padding: 0;         
+}
+
+/* about me */
+.about-me-static {
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  min-height: 250px;
+  border: 1px solid #000;
+  font-weight: 700;
+}
+
 
 </style>
