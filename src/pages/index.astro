@@ -222,16 +222,65 @@ const formattedDate = `${month}/${day}/${year}`;
               </table>
             </section>
 
+
+
+            <!-- Favorite Players -->
             <section class="panel">
-              <div class="panel-header green-header">Players not Plays (PASS)</div>
-              <table class="panel-table">
-                <tr><th>Player</th>
-                <tr><td>STOCK</td><td></td></tr>
-                <tr><td>STOCK</td><td></td></tr>
-                
-                {Array.from({ length: 4 }).map(() => (
-                  <tr><td></td><td></td></tr>
-                ))}
+              <div class="panel-header green-header">Favorite Players</div>
+              <table class="panel-table fav-table">
+                <tr>
+                  <th class="col-num">#</th>
+                  <th class="col-play">Player</th>
+                </tr>
+
+                <tr>
+                  <td class="col-num">1</td>
+                  <td class="link-text">
+                    <a href="https://www.youtube.com/watch?v=63s4E-KsPd8" target="_blank">
+                      Jerry Jeudy
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-num">2</td>
+                  <td class="link-text">
+                    <a href="https://www.youtube.com/watch?v=M0UZWnmGVYk" target="_blank">
+                      Dez Bryant
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-num">3</td>
+                  <td class="link-text">
+                    <a href="https://www.tiktok.com/@_kurvvv_/video/7415715709369503018" target="_blank">
+                      Bryce Young
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-num">4</td>
+                  <td class="link-text">
+                    <a href="https://www.tiktok.com/@swiftycc0/video/7525342672438005014" target="_blank">
+                      Bukayo Saka
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-num">5</td>
+                  <td class="link-text">
+                    <a href="https://www.tiktok.com/@tyjaes2/video/7449481781318995246" target="_blank">
+                      Lamar Jackson
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="col-num">6</td>
+                  <td class="link-text">
+                    <a href="https://www.tiktok.com/@zalanzalanzalan/video/7473341815505046815" target="_blank">
+                      LeBron James
+                    </a>
+                  </td>
+                  </tr>
               </table>
             </section>
 
@@ -308,7 +357,7 @@ const formattedDate = `${month}/${day}/${year}`;
     grid-template-columns: 1fr 2fr 1fr;
     background: #000;
     color: #fff;
-    border-bottom: 4px solid var(--border);
+    border-bottom: 3px solid var(--border);
   }
 
   .sheet-top-left,
@@ -487,6 +536,17 @@ const formattedDate = `${month}/${day}/${year}`;
   min-height: 250px;
   border: 1px solid #000;
   font-weight: 700;
+}
+
+/* Fav Players Table*/
+.fav-table .col-num {
+  width: 30px;       
+  max-width: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+.fav-table .col-play {
+  width: auto;
 }
 
 </style>
