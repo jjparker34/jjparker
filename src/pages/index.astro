@@ -4,6 +4,7 @@ const month = today.getMonth() + 1;
 const day = today.getDate();
 const year = today.getFullYear();
 const formattedDate = `${month}/${day}/${year}`;
+
 ---
 
 <html lang="en">
@@ -159,21 +160,65 @@ const formattedDate = `${month}/${day}/${year}`;
               </div>
             </section>
 
-            <section class="panel tall">
-              <div class="panel-header yellow-header">2nd and 7–10</div>
-              <div class="three-col-headings">
-                <span>Left</span><span>Middle</span><span>Right</span>
-              </div>
-              <div class="three-col-body">
-                {Array.from({ length: 5 }).map(() => (
-                  <>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                  </>
-                ))}
-              </div>
-            </section>
+            <section class="panel tall second-710-panel">
+  <div class="panel-header yellow-header">Recent Articles</div>
+
+  <div class="play-card-grid">
+    <!-- CARD 1 -->
+    <a class="play-card-link"
+      href="https://campus2canton.com/how-important-is-winning-the-elite-11/?srsltid=AfmBOoq5qWMfcByvafcc6KYnBEslIBX1zvuhjaCfSGSJL0pCsFjp_eRr"
+      target="_blank">
+
+      <article class="play-card">
+        <h3 class="play-title">How Important is winning the Elite 11?</h3>
+        <p class="play-note">
+          Article published on Campus2Canton that uses historical data and analysis to determine 
+          the importance of winning the Elite 11.
+        </p>
+        <div class="play-meta">
+          <span class="tag">College Football</span>
+          <span class="tag">Fantasy</span>
+        </div>
+      </article>
+</a>
+
+    <!-- CARD 2 -->
+    <a class="play-card-link"
+      href="https://substack.com/home/post/p-157494844"
+      target="_blank">
+
+      <article class="play-card">
+        <h3 class="play-title">Chasing Brady? Or Already Caught?</h3>
+        <p class="play-note">
+          A substack self project, comparing the EPA of Mahomes and Brady's Super Bowl oppenents.
+        </p>
+        <div class="play-meta">
+          <span class="tag">NFL</span>
+          <span class="tag">EPA</span>
+        </div>
+      </article>
+</a>
+
+    <!-- CARD 3 -->
+    <a class="play-card-link"
+      href="https://x.com/Jparker1738/status/1795175375930105898/photo/1"
+      target="_blank">
+
+      <article class="play-card">
+        <h3 class="play-title">TE Hyper Inflation</h3>
+        <p class="play-note">
+          A post on the TD inflation of Tight Ends in fantasy football.
+        </p>
+        <div class="play-meta">
+          <span class="tag">NFL</span>
+          <span class="tag">Fantasy</span>
+        </div>
+      </article>
+</a>
+
+    <!-- Add more cards if you want -->
+  </div>
+</section>
 
             <section class="panel tall">
               <div class="panel-header yellow-header">2nd and 4–6</div>
@@ -548,5 +593,66 @@ const formattedDate = `${month}/${day}/${year}`;
 .fav-table .col-play {
   width: auto;
 }
+
+/* 2nd & 7–10 custom cards */
+.second-710-panel {
+  /* nothing required yet, but here if you want special tweaks later */
+}
+
+.play-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.6rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.play-card {
+  background: #ffffff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0.5rem 0.6rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.8rem;
+}
+
+.play-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.play-note {
+  margin: 0 0 0.4rem;
+  line-height: 1.2rem;
+}
+
+.play-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 0.1rem 0.3rem;
+  border-radius: 999px;
+  border: 1px solid #000;
+  background: #f5f5f5;
+}
+
+.play-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.play-card-link:hover .play-card {
+  transform: translateY(-3px);
+  transition: 0.2s ease-out;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
 
 </style>
