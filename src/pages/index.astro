@@ -143,20 +143,23 @@ const formattedDate = `${month}/${day}/${year}`;
 
           <!-- MIDDLE COLUMN -->
           <div class="col col-middle">
-
             <section class="panel tall">
               <div class="panel-header yellow-header">1st &amp; 10</div>
               <div class="three-col-headings">
                 <span>Left</span><span>Middle</span><span>Right</span>
               </div>
               <div class="three-col-body">
-                {Array.from({ length: 10 }).map(() => (
-                  <>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                  </>
-                ))}
+                <div>Try out my R/P tool:</div>
+                <div class="link-text">
+                  <a
+                    href="https://jjparker34.shinyapps.io/hsrpshiny/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open Run/Pass Predictor
+                  </a>
+                </div>
+                <div class="cell"></div>
               </div>
             </section>
 
