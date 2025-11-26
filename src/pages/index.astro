@@ -133,7 +133,7 @@ const formattedDate = `${month}/${day}/${year}`;
 
               </table>
             </section>
-                        <!-- ⭐ TOPSTERS PANEL ⭐ -->
+                        <!-- TwoPtChart -->
             <section class="panel topsters-panel">
               <div class="topsters-content">
                 <img src="/images/twoptchart.png" alt="two pt chart" />
@@ -143,91 +143,131 @@ const formattedDate = `${month}/${day}/${year}`;
 
           <!-- MIDDLE COLUMN -->
           <div class="col col-middle">
+
+            <!-- 1ST & 10 -->
             <section class="panel tall">
               <div class="panel-header yellow-header">1st &amp; 10</div>
+
               <div class="three-col-headings">
                 <span>Left</span><span>Middle</span><span>Right</span>
               </div>
-              <div class="three-col-body">
-                <div>Try out my R/P tool:</div>
+
+              <!-- special class rp-row added here -->
+              <div class="three-col-body rp-row">
+                <!-- LEFT -->
+                <div class="rp-left-text">
+                <div class="rp-title">Try out my Run Pass tool:</div>
+                <div class="rp-desc">
+                  Upload your play-by-play data and get run or pass predictions based on situation
+                  and team tendencies. Model Trained using XGBoost with high accuracy.
+                </div>
+              </div>
+
+                <!-- MIDDLE -->
                 <div class="link-text">
                   <a
                     href="https://jjparker34.shinyapps.io/hsrpshiny/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Open Run/Pass Predictor
+                    
+                   XGBoost Run Pass Predictor
                   </a>
                 </div>
-                <div class="cell"></div>
+
+                <!-- RIGHT -->
+                <div class="rp-image-cell">
+                  <a
+                    href="https://jjparker34.shinyapps.io/hsrpshiny/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img 
+                      src="/images/rpPredict.png"
+                      alt="Run/Pass Predictor Preview"
+                      class="rp-preview"
+                    />
+                  </a>
+                </div>
               </div>
             </section>
 
+
+            <!-- RECENT ARTICLES -->
             <section class="panel tall second-710-panel">
-  <div class="panel-header yellow-header">Recent Articles</div>
+              <div class="panel-header yellow-header">RECENT ARTICLES</div>
 
-  <div class="play-card-grid">
-    <!-- CARD 1 -->
-    <a class="play-card-link"
-      href="https://campus2canton.com/how-important-is-winning-the-elite-11/?srsltid=AfmBOoq5qWMfcByvafcc6KYnBEslIBX1zvuhjaCfSGSJL0pCsFjp_eRr"
-      target="_blank">
-
-      <article class="play-card">
-        <h3 class="play-title">How Important is winning the Elite 11?</h3>
-        <p class="play-note">
-          Article published on Campus2Canton that uses historical data and analysis to determine 
-          the importance of winning the Elite 11.
-        </p>
-        <div class="play-meta">
-          <span class="tag">College Football</span>
-          <span class="tag">Fantasy</span>
-        </div>
-      </article>
-</a>
-
-    <!-- CARD 2 -->
-    <a class="play-card-link"
-      href="https://substack.com/home/post/p-157494844"
-      target="_blank">
-
-      <article class="play-card">
-        <h3 class="play-title">Chasing Brady? Or Already Caught?</h3>
-        <p class="play-note">
-          A substack self project, comparing the EPA of Mahomes and Brady's Super Bowl oppenents.
-        </p>
-        <div class="play-meta">
-          <span class="tag">NFL</span>
-          <span class="tag">EPA</span>
-        </div>
-      </article>
-</a>
-
-    <!-- CARD 3 -->
-    <a class="play-card-link"
-      href="https://x.com/Jparker1738/status/1795175375930105898/photo/1"
-      target="_blank">
-
-      <article class="play-card">
-        <h3 class="play-title">TE Hyper Inflation</h3>
-        <p class="play-note">
-          A post on the TD inflation of Tight Ends in fantasy football.
-        </p>
-        <div class="play-meta">
-          <span class="tag">NFL</span>
-          <span class="tag">Fantasy</span>
-        </div>
-      </article>
-</a>
-
-    <!-- Add more cards if you want -->
-  </div>
-</section>
-
-            <section class="panel tall">
-              <div class="panel-header yellow-header">2nd and 4–6</div>
+              <!-- NEW LEFT / MIDDLE / RIGHT HEADINGS -->
               <div class="three-col-headings">
                 <span>Left</span><span>Middle</span><span>Right</span>
               </div>
+
+              <div class="three-col-body recent-articles-body">
+                
+                <!-- CARD 1 -->
+                <a class="play-card-link"
+                  href="https://campus2canton.com/how-important-is-winning-the-elite-11/?srsltid=AfmBOoq5qWMfcByvafcc6KYnBEslIBX1zvuhjaCfSGSJL0pCsFjp_eRr"
+                  target="_blank"
+                >
+                  <article class="play-card">
+                    <h3 class="play-title">How Important is winning the Elite 11?</h3>
+                    <p class="play-note">
+                      Article published on Campus2Canton that uses historical data and analysis 
+                      to determine the importance of winning the Elite 11.
+                    </p>
+                    <div class="play-meta">
+                      <span class="tag">College Football</span>
+                      <span class="tag">Fantasy</span>
+                    </div>
+                  </article>
+                </a>
+
+                <!-- CARD 2 -->
+                <a class="play-card-link"
+                  href="https://substack.com/home/post/p-157494844"
+                  target="_blank"
+                >
+                  <article class="play-card">
+                    <h3 class="play-title">Chasing Brady? Or Already Caught?</h3>
+                    <p class="play-note">
+                      A Substack project comparing the EPA of Mahomes and Brady's Super Bowl opponents.
+                    </p>
+                    <div class="play-meta">
+                      <span class="tag">NFL</span>
+                      <span class="tag">EPA</span>
+                    </div>
+                  </article>
+                </a>
+
+                <!-- CARD 3 -->
+                <a class="play-card-link"
+                  href="https://x.com/Jparker1738/status/1795175375930105898/photo/1"
+                  target="_blank"
+                >
+                  <article class="play-card">
+                    <h3 class="play-title">TE Hyper Inflation</h3>
+                    <p class="play-note">
+                      A post on the TD inflation of Tight Ends in fantasy football.
+                    </p>
+                    <div class="play-meta">
+                      <span class="tag">NFL</span>
+                      <span class="tag">Fantasy</span>
+                    </div>
+                  </article>
+                </a>
+
+              </div>
+            </section>
+
+
+            <!-- 2ND AND 4–6 -->
+            <section class="panel tall">
+              <div class="panel-header yellow-header">2nd AND 4–6</div>
+
+              <div class="three-col-headings">
+                <span>Left</span><span>Middle</span><span>Right</span>
+              </div>
+
               <div class="three-col-body">
                 {Array.from({ length: 5 }).map(() => (
                   <>
@@ -239,11 +279,15 @@ const formattedDate = `${month}/${day}/${year}`;
               </div>
             </section>
 
+
+            <!-- 3RD AND 7–10 -->
             <section class="panel tall">
-              <div class="panel-header yellow-header">3rd and 7–10</div>
+              <div class="panel-header yellow-header">3rd AND 7–10</div>
+
               <div class="three-col-headings">
                 <span>Left</span><span>Middle</span><span>Right</span>
               </div>
+
               <div class="three-col-body">
                 {Array.from({ length: 7 }).map(() => (
                   <>
@@ -657,5 +701,79 @@ const formattedDate = `${month}/${day}/${year}`;
   box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
+/* Base layout for ALL 3-column bodies (used by 2nd/3rd, etc.) */
+.three-col-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* The writing lines for your call sheet */
+.cell {
+  border-bottom: 2px solid #000;
+  min-height: 24px;   /* or whatever you had before */
+}
+
+
+/* SPECIAL styling only for the Run/Pass row */
+.three-col-body.rp-row > div {
+  display: flex;
+  flex-direction: column;   /* stack text vertically */
+  align-items: flex-start;  /* left-align horizontally */
+  justify-content: flex-start; /* top-align vertically */
+}
+
+/* Make sure we don't draw lines in the RP row */
+.three-col-body.rp-row .cell {
+  border-bottom: none;
+}
+
+.rp-image-cell {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.rp-preview {
+  max-width: 250px;     /* increase this */
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid #ccc;
+  background: white;
+}
+
+.recent-articles-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);   /* 3 even columns */
+  gap: 16px;                                /* space between cards */
+  padding: 12px;
+}
+.rp-left-text {
+  display: flex;
+  padding: 5px 5px;
+  flex-direction: column;    /* stack vertically */
+  justify-content: left;   /* vertical centering */
+  gap: 6px;                  /* spacing between title + description */
+}
+
+.rp-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.rp-desc {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  max-width: 420px;          /* keeps description tidy */
+  color: #222;
+}
+
+.rp-row .link-text {
+  padding: 6px 6px;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
 </style>
