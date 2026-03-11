@@ -592,120 +592,60 @@ const formattedDate = `${month}/${day}/${year}`;
         return response.json();
       }
 
-      function createMonthlyChartTile(album, index) {
-        const tile = document.createElement(album?.url ? "a" : "div");
-        tile.className = "monthly-chart-tile";
+      function renderMonthlyChartAlbums(card, grid, albums) {
+        grid.innerHTML = "";
 
-        if (album?.url) {
-          tile.href = album.url;
-          tile.target = "_blank";
-          tile.rel = "noopener noreferrer";
-        }
-
-        const cover = document.createElement("div");
-        cover.className = "monthly-chart-cover";
-
-        if (album) {
+        albums.forEach((album, index) => {
+          const tile = document.createElement(album.url ? "a" : "div");
+          tile.className = "monthly-chart-tile";
           tile.title = `#${index + 1} ${album.name} by ${album.artist} (${album.plays} plays)`;
+
+          if (album.url) {
+            tile.href = album.url;
+            tile.target = "_blank";
+            tile.rel = "noopener noreferrer";
+          }
+
+          const cover = document.createElement("div");
+          cover.className = "monthly-chart-cover";
+
           if (album.image) {
             const image = document.createElement("img");
-            image.className = "monthly-chart-image";
             image.src = album.image;
             image.alt = `${album.name} by ${album.artist}`;
             image.loading = index < 3 ? "eager" : "lazy";
             image.decoding = "async";
+            image.style.width = "100%";
+            image.style.height = "100%";
+            image.style.objectFit = "contain";
+            image.style.objectPosition = "center";
+            image.style.display = "block";
             cover.appendChild(image);
           } else {
             cover.classList.add("is-empty");
             cover.textContent = album.name;
           }
+
+          const rank = document.createElement("span");
+          rank.className = "monthly-chart-rank";
+          rank.textContent = `#${index + 1}`;
+
+          tile.append(cover, rank);
+          grid.appendChild(tile);
+        });
+
+        for (let index = albums.length; index < 9; index += 1) {
+          const placeholder = document.createElement("div");
+          placeholder.className = "monthly-chart-tile monthly-chart-tile-placeholder";
+
+          const cover = document.createElement("div");
+          cover.className = "monthly-chart-cover monthly-chart-cover-placeholder";
+
+          placeholder.appendChild(cover);
+          grid.appendChild(placeholder);
         }
-
-        const rank = document.createElement("span");
-        rank.className = "monthly-chart-rank";
-        rank.textContent = `#${index + 1}`;
-
-        if (!album) {
-          tile.classList.add("monthly-chart-tile-placeholder");
-          cover.classList.add("monthly-chart-cover-placeholder");
-        }
-
-        tile.append(cover, rank);
-        return tile;
-      }
-
-      function setMonthlyChartMessage(card, status, grid, state, title, message) {
-        card.dataset.state = state;
-        status.textContent = title;
-        grid.innerHTML = `<div class='monthly-chart-message'>${message}</div>`;
-      }
-
-      function renderMonthlyChartAlbums(card, grid, albums) {
-        grid.replaceChildren(
-          ...Array.from({ length: 9 }, (_, index) =>
-            createMonthlyChartTile(albums[index] ?? null, index),
-          ),
-        );
 
         card.dataset.state = "ready";
-      }
-
-      async function fetchMonthlyAlbums(username, apiKey, from) {
-        let currentPage = 1;
-        let totalPages = 1;
-        const albumMap = new Map();
-
-        while (currentPage <= totalPages) {
-          const params = new URLSearchParams({
-            method: "user.getrecenttracks",
-            user: username,
-            api_key: apiKey,
-            format: "json",
-            limit: "200",
-            page: String(currentPage),
-            from: String(from),
-          });
-
-          const data = await fetchLastFmJson(params);
-          const recentTracks = data?.recenttracks?.track ?? [];
-          const attr = data?.recenttracks?.["@attr"] ?? {};
-          totalPages = Number(attr.totalPages || 1);
-
-          for (const track of recentTracks) {
-            if (!track?.date?.uts) {
-              continue;
-            }
-
-            const albumKey = normalizeAlbumKey(track);
-            if (!albumKey) {
-              continue;
-            }
-
-            const existing = albumMap.get(albumKey) ?? {
-              name: track.album["#text"].trim(),
-              artist: track.artist["#text"].trim(),
-              plays: 0,
-              image: "",
-              url: track.url || "",
-              latestUts: 0,
-            };
-
-            existing.plays += 1;
-            existing.image =
-              existing.image ||
-              track.image?.map((image) => image["#text"]).filter(Boolean).pop() ||
-              "";
-            existing.url = existing.url || track.url || "";
-            existing.latestUts = Math.max(existing.latestUts, Number(track.date.uts));
-            albumMap.set(albumKey, existing);
-          }
-
-          currentPage += 1;
-        }
-
-        return Array.from(albumMap.values())
-          .sort((left, right) => right.plays - left.plays || right.latestUts - left.latestUts)
-          .slice(0, 9);
       }
 
       async function updateMonthlyChart() {
@@ -723,37 +663,77 @@ const formattedDate = `${month}/${day}/${year}`;
         period.textContent = monthlyWindow.label;
 
         if (!lastFmApiKey || !lastFmUsername) {
-          setMonthlyChartMessage(
-            card,
-            status,
-            grid,
-            "error",
-            "Monthly chart unavailable",
-            "Set PUBLIC_LASTFM_API_KEY and PUBLIC_LASTFM_USERNAME.",
-          );
+          card.dataset.state = "error";
+          status.textContent = "Monthly chart unavailable";
+          grid.innerHTML = "<div class='monthly-chart-message'>Set PUBLIC_LASTFM_API_KEY and PUBLIC_LASTFM_USERNAME.</div>";
           return;
         }
 
         card.dataset.state = "loading";
         status.textContent = "Loading monthly chart...";
-        grid.replaceChildren();
+        grid.innerHTML = "";
 
         try {
-          const albums = await fetchMonthlyAlbums(
-            lastFmUsername,
-            lastFmApiKey,
-            monthlyWindow.from,
-          );
+          let currentPage = 1;
+          let totalPages = 1;
+          const albumMap = new Map();
+
+          while (currentPage <= totalPages) {
+            const params = new URLSearchParams({
+              method: "user.getrecenttracks",
+              user: lastFmUsername,
+              api_key: lastFmApiKey,
+              format: "json",
+              limit: "200",
+              page: String(currentPage),
+              from: String(monthlyWindow.from),
+            });
+
+            const data = await fetchLastFmJson(params);
+            const recentTracks = data?.recenttracks?.track ?? [];
+            const attr = data?.recenttracks?.["@attr"] ?? {};
+            totalPages = Number(attr.totalPages || 1);
+
+            for (const track of recentTracks) {
+              if (!track?.date?.uts) {
+                continue;
+              }
+
+              const albumKey = normalizeAlbumKey(track);
+              if (!albumKey) {
+                continue;
+              }
+
+              const existing = albumMap.get(albumKey) ?? {
+                name: track.album["#text"].trim(),
+                artist: track.artist["#text"].trim(),
+                plays: 0,
+                image: "",
+                url: track.url || "",
+                latestUts: 0,
+              };
+
+              existing.plays += 1;
+              existing.image =
+                existing.image ||
+                track.image?.map((image) => image["#text"]).filter(Boolean).pop() ||
+                "";
+              existing.url = existing.url || track.url || "";
+              existing.latestUts = Math.max(existing.latestUts, Number(track.date.uts));
+              albumMap.set(albumKey, existing);
+            }
+
+            currentPage += 1;
+          }
+
+          const albums = Array.from(albumMap.values())
+            .sort((left, right) => right.plays - left.plays || right.latestUts - left.latestUts)
+            .slice(0, 9);
 
           if (!albums.length) {
-            setMonthlyChartMessage(
-              card,
-              status,
-              grid,
-              "empty",
-              "No albums scrobbled yet this month",
-              "Play something on the first and the chart will populate automatically.",
-            );
+            card.dataset.state = "empty";
+            status.textContent = "No albums scrobbled yet this month";
+            grid.innerHTML = "<div class='monthly-chart-message'>Play something on the first and the chart will populate automatically.</div>";
             return;
           }
 
@@ -761,14 +741,9 @@ const formattedDate = `${month}/${day}/${year}`;
           renderMonthlyChartAlbums(card, grid, albums);
         } catch (error) {
           console.error(error);
-          setMonthlyChartMessage(
-            card,
-            status,
-            grid,
-            "error",
-            "Unable to load monthly chart",
-            "Check your Last.fm credentials or browser network access.",
-          );
+          card.dataset.state = "error";
+          status.textContent = "Unable to load monthly chart";
+          grid.innerHTML = "<div class='monthly-chart-message'>Check your Last.fm credentials or browser network access.</div>";
         }
       }
 
@@ -1038,7 +1013,7 @@ const formattedDate = `${month}/${day}/${year}`;
     box-sizing: border-box;
   }
 
-  .monthly-chart-image {
+  .monthly-chart-cover img {
     display: block;
     width: 100%;
     height: 100%;
