@@ -1407,23 +1407,38 @@ const formattedDate = `${month}/${day}/${year}`;
   text-decoration: underline;
 }
 
-@media (min-width: 901px) and (max-height: 900px) {
+@media (min-width: 901px) and (max-height: 1100px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   .page {
+    height: 100svh;
     min-height: 0;
     padding: 1rem;
-    align-items: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
     box-sizing: border-box;
   }
 
   .sheet {
-    height: auto;
+    width: 128.205128%;
+    max-width: none;
+    height: calc(128.205128svh - 2.564102rem);
     min-height: 0;
-    overflow: visible;
+    overflow: hidden;
     box-sizing: border-box;
+    flex: 0 0 auto;
+    transform: scale(0.78);
+    transform-origin: top left;
   }
 
   .sheet-grid {
     min-height: 0;
+    grid-template-columns: 340px minmax(0, 1fr) 340px;
   }
 
   .sheet-title {
