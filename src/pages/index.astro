@@ -10,7 +10,7 @@ const formattedDate = `${month}/${day}/${year}`;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jivon Parker</title>
   </head>
 
@@ -22,7 +22,7 @@ const formattedDate = `${month}/${day}/${year}`;
         <header class="sheet-top">
           <div class="sheet-top-left">
             <div class="small-label">Game</div>
-            <div class="game-name">SPRING GAME</div>
+            <div class="game-name">Parklane Academy -- Week 1</div>
           </div>
           <div class="sheet-top-center">
             <div class="sheet-title">Jivon Parker's Call Sheet</div>
@@ -43,8 +43,9 @@ const formattedDate = `${month}/${day}/${year}`;
             <div class="panel-header black-header">About Me:</div>
             <div class="about-me-static">
               Hi, I'm Jivon Parker. Here's a place where I'll store my links, articles, takes, and intersets.
-              I'm currently the defensive coordinator at Midland Christian. This website is based off my own callsheet
-              and thought it would be a fun way to design my website. 
+              I'm currently the Sams/Nickels coach at Gulf Shores High School in Alabama, and previouly was the
+              defensive coordinator at Midland Christian High School. I made this website based on a my call sheet
+              and thought would be a cool and unique way to design my website.
             </div>
           </section>
             </section>
@@ -144,63 +145,41 @@ const formattedDate = `${month}/${day}/${year}`;
           <!-- MIDDLE COLUMN -->
           <div class="col col-middle">
 
-            <!-- 1ST & 10 -->
-            <section class="panel tall">
-              <div class="panel-header yellow-header">1st &amp; 10</div>
+            <!-- TOOLS -->
+            <section class="panel tools-panel">
+              <div class="panel-header yellow-header">TOOLS</div>
 
-              <div class="three-col-headings">
-                <span>Left</span><span>Middle</span><span>Right</span>
-              </div>
-
-              <!-- special class rp-row added here -->
-              <div class="three-col-body rp-row">
-                <!-- LEFT -->
-                <div class="rp-left-text">
-                <div class="rp-title">Try out my Run Pass tool:</div>
-                <div class="rp-desc">
-                  Upload your play-by-play data and get run or pass predictions based on situation
-                  and team tendencies. Model Trained using XGBoost with high accuracy.
-                </div>
-              </div>
-
-                <!-- MIDDLE -->
-                <div class="link-text">
-                  <a
-                    href="https://jjparker34.shinyapps.io/hsrpshiny/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    
-                   XGBoost Run Pass Predictor
+              <div class="tools-grid">
+                <article class="tool-card">
+                  <div class="tool-copy">
+                    <div class="tool-kicker">1st &amp; 10</div>
+                    <div class="tool-title">Run Pass Predictor</div>
+                    <div class="tool-description">Predict run or pass from situation and team tendencies.</div>
+                    <a class="tool-link" href="https://jjparker34.shinyapps.io/hsrpshiny/" target="_blank" rel="noopener noreferrer">Open predictor</a>
+                  </div>
+                  <a class="tool-preview-link" href="https://jjparker34.shinyapps.io/hsrpshiny/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/rpPredict.png" alt="Run/Pass Predictor Preview" class="tool-preview" />
                   </a>
-                </div>
+                </article>
 
-                <!-- RIGHT -->
-                <div class="rp-image-cell">
-                  <a
-                    href="https://jjparker34.shinyapps.io/hsrpshiny/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img 
-                      src="/images/rpPredict.png"
-                      alt="Run/Pass Predictor Preview"
-                      class="rp-preview"
-                    />
+                <article class="tool-card">
+                  <div class="tool-copy">
+                    <div class="tool-kicker">2nd AND 4–6</div>
+                    <div class="tool-title">Breakdown Builder</div>
+                    <div class="tool-description">Organize opponent tendencies and build reports for your staff.</div>
+                    <a class="tool-link" href="https://breakdowngen.onrender.com/" target="_blank" rel="noopener noreferrer">Open builder</a>
+                  </div>
+                  <a class="tool-preview-link" href="https://breakdowngen.onrender.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/breakdownBuilder.png" alt="Breakdown Builder preview" class="tool-preview" />
                   </a>
-                </div>
+                </article>
               </div>
             </section>
 
 
             <!-- RECENT ARTICLES -->
-            <section class="panel tall second-710-panel">
+            <section class="panel tall second-710-panel articles-panel">
               <div class="panel-header yellow-header">RECENT ARTICLES</div>
-
-              <!-- NEW LEFT / MIDDLE / RIGHT HEADINGS -->
-              <div class="three-col-headings">
-                <span>Left</span><span>Middle</span><span>Right</span>
-              </div>
 
               <div class="three-col-body recent-articles-body">
                 
@@ -256,26 +235,96 @@ const formattedDate = `${month}/${day}/${year}`;
                   </article>
                 </a>
 
+                <!-- CARD 4 -->
+                <a class="play-card-link"
+                  href="https://substack.com/home/post/p-189596137"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <article class="play-card">
+                    <h3 class="play-title">On Evolution</h3>
+                    <p class="play-note">
+                      Discussing my philosophy on growth and change connecting music and sports.
+                    </p>
+                    <div class="play-meta">
+                      <span class="tag">Thoughts</span>
+                      <span class="tag">Sports</span>
+                      <span class="tag">Music</span>
+                    </div>
+                  </article>
+                </a>
+
+                <!-- CARD 5 -->
+                <a class="play-card-link"
+                  href="https://x.com/jivonparker/status/1862348536987160873?s=20"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <article class="play-card">
+                    <h3 class="play-title">ROTY EPA: Winners &amp; Contenders</h3>
+                    <p class="play-note">
+                      A look at the EPA of Offensive Rookie of the Year winners and contenders.
+                    </p>
+                    <div class="play-meta">
+                      <span class="tag">NFL</span>
+                      <span class="tag">EPA</span>
+                    </div>
+                  </article>
+                </a>
+
+                <!-- CARD 6 -->
+                <a class="play-card-link"
+                  href="https://x.com/jivonparker/status/1861109926799565012/photo/1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <article class="play-card">
+                    <h3 class="play-title">2024 Rookie QB Report</h3>
+                    <p class="play-note">
+                      Comparing advanced statistics across the rookie quarterbacks from the 2024 draft class.
+                    </p>
+                    <div class="play-meta">
+                      <span class="tag">NFL</span>
+                      <span class="tag">Rookies</span>
+                    </div>
+                  </article>
+                </a>
+
               </div>
             </section>
 
 
             <!-- 2ND AND 4–6 -->
-            <section class="panel tall">
+            <section class="panel tall breakdown-panel" hidden>
               <div class="panel-header yellow-header">2nd AND 4–6</div>
 
               <div class="three-col-headings">
                 <span>Left</span><span>Middle</span><span>Right</span>
               </div>
 
-              <div class="three-col-body">
-                {Array.from({ length: 5 }).map(() => (
-                  <>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                  </>
-                ))}
+              <div class="three-col-body rp-row breakdown-row">
+                <div class="rp-left-text">
+                  <div class="rp-title">Try out my Breakdown Generator:</div>
+                  <div class="rp-desc">
+                    Upload breakdown data, organize opponent tendencies, and build reports your staff can use.
+                  </div>
+                </div>
+
+                <div class="link-text">
+                  <a href="https://breakdowngen.onrender.com/" target="_blank" rel="noopener noreferrer">
+                    Breakdown Builder
+                  </a>
+                </div>
+
+                <div class="rp-image-cell">
+                  <a href="https://breakdowngen.onrender.com/" target="_blank" rel="noopener noreferrer">
+                    <img
+                      src="/images/breakdownBuilder.png"
+                      alt="Breakdown Builder preview"
+                      class="rp-preview"
+                    />
+                  </a>
+                </div>
               </div>
             </section>
 
@@ -285,17 +334,16 @@ const formattedDate = `${month}/${day}/${year}`;
               <div class="panel-header yellow-header">3rd AND 7–10</div>
 
               <div class="three-col-headings">
-                <span>Left</span><span>Middle</span><span>Right</span>
+                <span>Base</span><span>Sub</span><span>Exotics</span>
               </div>
 
               <div class="three-col-body">
-                {Array.from({ length: 7 }).map(() => (
-                  <>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                    <div class="cell"></div>
-                  </>
-                ))}
+                <div class="cell call-cell">Tite 4 Mod</div><div class="cell call-cell">Bladee 4 Mod</div><div class="cell call-cell">Rush Pick 4</div>
+                <div class="cell call-cell">Mint 4 Mod</div><div class="cell call-cell">Bladee Stab Blue</div><div class="cell call-cell">Mint Smash FZ</div>
+                <div class="cell call-cell">Move Pirate Buzz</div><div class="cell call-cell">Bladee Jewel FZ</div><div class="cell call-cell">Eva Mai 0</div>
+                <div class="cell call-cell">Mint Smash FZ</div><div class="cell"></div><div class="cell call-cell">Bladee Sin Blue</div>
+                <div class="cell call-cell">Mint Mod Cone</div><div class="cell"></div><div class="cell call-cell">Bladee Cobra Combo</div>
+                <div class="cell call-cell">Mint Joke 4 Mod</div><div class="cell"></div><div class="cell"></div>
               </div>
             </section>
 
@@ -329,7 +377,7 @@ const formattedDate = `${month}/${day}/${year}`;
             </section>
 
             <!-- Favorite Players -->
-            <section class="panel">
+            <section class="panel favorite-players-panel">
               <div class="panel-header green-header">Favorite Players</div>
               <table class="panel-table fav-table">
                 <tr>
@@ -659,8 +707,11 @@ const formattedDate = `${month}/${day}/${year}`;
         }
 
         const timeZone = "America/Chicago";
-        const monthlyWindow = getMonthlyWindow(timeZone);
-        period.textContent = monthlyWindow.label;
+        period.textContent = new Intl.DateTimeFormat("en-US", {
+          timeZone,
+          month: "long",
+          year: "numeric",
+        }).format(new Date());
 
         if (!lastFmApiKey || !lastFmUsername) {
           card.dataset.state = "error";
@@ -674,61 +725,25 @@ const formattedDate = `${month}/${day}/${year}`;
         grid.innerHTML = "";
 
         try {
-          let currentPage = 1;
-          let totalPages = 1;
-          const albumMap = new Map();
+          const params = new URLSearchParams({
+            method: "user.gettopalbums",
+            user: lastFmUsername,
+            api_key: lastFmApiKey,
+            format: "json",
+            period: "1month",
+            limit: "9",
+          });
 
-          while (currentPage <= totalPages) {
-            const params = new URLSearchParams({
-              method: "user.getrecenttracks",
-              user: lastFmUsername,
-              api_key: lastFmApiKey,
-              format: "json",
-              limit: "200",
-              page: String(currentPage),
-              from: String(monthlyWindow.from),
-            });
-
-            const data = await fetchLastFmJson(params);
-            const recentTracks = data?.recenttracks?.track ?? [];
-            const attr = data?.recenttracks?.["@attr"] ?? {};
-            totalPages = Number(attr.totalPages || 1);
-
-            for (const track of recentTracks) {
-              if (!track?.date?.uts) {
-                continue;
-              }
-
-              const albumKey = normalizeAlbumKey(track);
-              if (!albumKey) {
-                continue;
-              }
-
-              const existing = albumMap.get(albumKey) ?? {
-                name: track.album["#text"].trim(),
-                artist: track.artist["#text"].trim(),
-                plays: 0,
-                image: "",
-                url: track.url || "",
-                latestUts: 0,
-              };
-
-              existing.plays += 1;
-              existing.image =
-                existing.image ||
-                track.image?.map((image) => image["#text"]).filter(Boolean).pop() ||
-                "";
-              existing.url = existing.url || track.url || "";
-              existing.latestUts = Math.max(existing.latestUts, Number(track.date.uts));
-              albumMap.set(albumKey, existing);
-            }
-
-            currentPage += 1;
-          }
-
-          const albums = Array.from(albumMap.values())
-            .sort((left, right) => right.plays - left.plays || right.latestUts - left.latestUts)
-            .slice(0, 9);
+          const data = await fetchLastFmJson(params);
+          const albums = (data?.topalbums?.album ?? [])
+            .map((album) => ({
+              name: album?.name?.trim() ?? "",
+              artist: album?.artist?.name?.trim() ?? "",
+              plays: Number(album?.playcount ?? 0),
+              image: album?.image?.map((image) => image["#text"]).filter(Boolean).pop() ?? "",
+              url: album?.url ?? "",
+            }))
+            .filter((album) => album.name && album.artist);
 
           if (!albums.length) {
             card.dataset.state = "empty";
@@ -1198,6 +1213,14 @@ const formattedDate = `${month}/${day}/${year}`;
   min-height: 24px;   /* or whatever you had before */
 }
 
+.call-cell {
+  padding: 0.2rem 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
 
 /* SPECIAL styling only for the Run/Pass row */
 .three-col-body.rp-row > div {
@@ -1224,6 +1247,86 @@ const formattedDate = `${month}/${day}/${year}`;
   border-radius: 6px;
   border: 2px solid #ccc;
   background: white;
+}
+
+.tools-panel,
+.articles-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex: 1;
+  min-height: 0;
+}
+
+.tool-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 42%);
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.45rem;
+  border-left: 1px solid #000;
+}
+
+.tool-card:first-child {
+  border-left: none;
+}
+
+.tool-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tool-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tool-title {
+  margin-top: 0.1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.tool-description {
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.tool-link {
+  margin-top: auto;
+  width: fit-content;
+  padding-top: 0.35rem;
+  color: #0050c8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tool-link:hover {
+  text-decoration: underline;
+}
+
+.tool-preview-link {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tool-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 140px;
+  border: 1px solid #000;
+  object-fit: contain;
 }
 
 .recent-articles-body {
@@ -1361,24 +1464,362 @@ const formattedDate = `${month}/${day}/${year}`;
   text-decoration: underline;
 }
 
+@media (min-width: 901px) and (max-height: 1100px) {
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .page {
+    height: 100svh;
+    min-height: 0;
+    padding: 1rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .sheet {
+    width: 153.846154%;
+    max-width: none;
+    height: calc(153.846154svh - 3.076923rem);
+    min-height: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    transform: scale(0.65);
+    transform-origin: top left;
+  }
+
+  .sheet-grid {
+    min-height: 0;
+    grid-template-columns: 360px minmax(0, 1fr) 380px;
+  }
+
+  .sheet-title {
+    font-size: 1.45rem;
+  }
+
+  .about-me-static {
+    min-height: 0;
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+
+  .recent-articles-body {
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .play-card {
+    padding: 0.25rem 0.35rem;
+    box-shadow: none;
+    font-size: 0.72rem;
+  }
+
+  .play-title {
+    margin-bottom: 0.15rem;
+    font-size: 0.8rem;
+  }
+
+  .play-note {
+    margin-bottom: 0.25rem;
+    font-size: 0.7rem;
+    line-height: 1.1;
+  }
+
+  .tag {
+    font-size: 0.58rem;
+  }
+
+  .rp-left-text,
+  .rp-row .link-text {
+    padding: 4px;
+  }
+
+  .rp-title,
+  .rp-row .link-text {
+    font-size: 0.92rem;
+  }
+
+  .rp-desc {
+    font-size: 0.78rem;
+  }
+
+  .rp-preview {
+    max-width: 220px;
+    max-height: 165px;
+    object-fit: contain;
+  }
+
+  .now-playing-panel {
+    min-height: 0;
+  }
+
+  .now-playing-card {
+    min-height: 0;
+    padding: 0.55rem;
+  }
+
+  .now-playing-artwork {
+    width: 72px;
+    height: 72px;
+  }
+
+  .monthly-chart-status,
+  .monthly-chart-period {
+    font-size: 0.65rem;
+  }
+
+  .tools-panel {
+    flex: 0 0 275px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-card {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 0.35rem;
+    padding: 0.35rem;
+  }
+
+  .tool-kicker {
+    font-size: 0.62rem;
+  }
+
+  .tool-title {
+    font-size: 0.88rem;
+  }
+
+  .tool-description {
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+    line-height: 1.15;
+  }
+
+  .tool-link {
+    padding-top: 0.2rem;
+    font-size: 0.68rem;
+  }
+
+  .tool-preview {
+    width: 100%;
+    max-height: 245px;
+  }
+
+  .articles-panel {
+    flex: 1 1 0;
+  }
+
+  .recent-articles-body {
+    flex: 1;
+    min-height: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, auto);
+    grid-auto-rows: auto;
+    column-gap: 12px;
+    row-gap: 16px;
+    align-content: space-evenly;
+  }
+
+  .play-card-link,
+  .play-card {
+    min-height: 0;
+    height: auto;
+    box-sizing: border-box;
+    align-self: start;
+  }
+
+  .play-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 112px;
+  }
+
+  .play-meta {
+    margin-top: 0.3rem;
+  }
+
+  .play-note {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .col-left .topsters-panel,
+  .col-right .topsters-panel {
+    flex: 1;
+  }
+
+  .now-playing-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 0.4rem;
+    padding: 0.4rem;
+  }
+
+  .now-playing-artwork {
+    width: 58px;
+    height: 58px;
+  }
+
+  .now-playing-status,
+  .now-playing-link {
+    font-size: 0.62rem;
+  }
+
+  .now-playing-track {
+    font-size: 0.82rem;
+  }
+
+  .now-playing-artist,
+  .now-playing-album {
+    font-size: 0.68rem;
+  }
+
+  .panel-table {
+    font-size: 0.68rem;
+  }
+
+  .panel-table th,
+  .panel-table td {
+    height: 16px;
+  }
+
+  .col-middle .panel:last-child {
+    flex: 0 0 auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .col-middle .panel:last-child .three-col-body {
+    flex: 0 0 auto;
+    min-height: 0;
+    grid-auto-rows: auto;
+  }
+
+  .col-middle .panel:last-child .cell {
+    min-height: 18px;
+    padding: 0.14rem 0.28rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .col-middle .panel:last-child .call-cell {
+    font-size: 0.72rem;
+    line-height: 1.1;
+  }
+
+  .monthly-chart-grid {
+    aspect-ratio: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .monthly-chart-tile {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .monthly-chart-rank {
+    display: none;
+  }
+
+  .col-left {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .col-right {
+    display: grid;
+    grid-template-rows: 170px 185px minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .col-left .topsters-panel,
+  .col-right .topsters-panel,
+  .col-right > .panel {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .topsters-content,
+  .monthly-chart-content,
+  .monthly-chart-card {
+    min-height: 0;
+  }
+
+  .col-left .topsters-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .monthly-chart-grid {
+    width: auto;
+    height: 0;
+  }
+
+  .favorite-players-panel .panel-header {
+    padding: 0.15rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .favorite-players-panel .panel-table {
+    font-size: 0.64rem;
+  }
+
+  .favorite-players-panel .panel-table th,
+  .favorite-players-panel .panel-table td {
+    height: 14px;
+    min-height: 0;
+    padding: 0.05rem 0.2rem;
+  }
+}
+
 @media (max-width: 900px) {
   .page {
+    display: block;
+    min-height: 0;
     padding: 0.75rem;
   }
 
   .sheet {
     height: auto;
     min-height: auto;
+    overflow: visible;
   }
 
   .sheet-top {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .sheet-top-left,
-  .sheet-top-right,
-  .sheet-top-center {
+  .sheet-top-right {
     padding: 0.5rem 0.75rem;
+  }
+
+  .sheet-top-left {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .sheet-top-center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: 0.55rem 0.75rem 0.4rem;
+  }
+
+  .sheet-top-right {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
   }
 
   .sheet-title {
@@ -1410,23 +1851,14 @@ const formattedDate = `${month}/${day}/${year}`;
     flex: unset;
   }
 
-  .three-col-headings,
-  .three-col-body,
   .recent-articles-body {
-    grid-template-columns: 1fr;
-  }
-
-  .three-col-headings span {
-    padding: 0.35rem 0;
-    border-bottom: 1px solid #000;
-  }
-
-  .three-col-headings span:last-child {
-    border-bottom: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 10px;
   }
 
   .three-col-body .cell {
-    border-left: none;
+    min-height: 28px;
   }
 
   .three-col-body.rp-row > div,
@@ -1476,18 +1908,33 @@ const formattedDate = `${month}/${day}/${year}`;
     padding: 0.5rem;
   }
 
-  .monthly-chart-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .favorite-players-panel .panel-header {
+    padding: 0.2rem 0.35rem;
+    font-size: 0.8rem;
   }
+
+  .favorite-players-panel .panel-table {
+    font-size: 0.76rem;
+  }
+
+  .favorite-players-panel .panel-table th,
+  .favorite-players-panel .panel-table td {
+    min-height: 21px;
+    padding: 0.1rem 0.3rem;
+  }
+
 }
 
-@media (max-width: 560px) {
+/* Keep the compact call-sheet grid through small laptops and tablet-sized windows.
+   The one-column treatment is reserved for phone-width screens. */
+@media (max-width: 520px) {
   .page {
-    padding: 0.35rem;
+    padding: 0;
   }
 
   .sheet {
-    border-width: 3px;
+    border-width: 0;
+    box-shadow: none;
   }
 
   .sheet-top {
@@ -1495,8 +1942,8 @@ const formattedDate = `${month}/${day}/${year}`;
   }
 
   .sheet-title {
-    font-size: 1rem;
-    letter-spacing: 0.04em;
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    letter-spacing: 0.03em;
   }
 
   .small-label,
@@ -1510,7 +1957,7 @@ const formattedDate = `${month}/${day}/${year}`;
   .link-text a,
   .rp-title,
   .now-playing-track {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .rp-desc,
@@ -1523,6 +1970,98 @@ const formattedDate = `${month}/${day}/${year}`;
   }
 
   .now-playing-card {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .now-playing-artwork {
+    width: 72px;
+    height: 72px;
+  }
+
+  .recent-articles-body,
+  .three-col-body.rp-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card {
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 42%);
+    border-left: none;
+    border-top: 1px solid #000;
+  }
+
+  .tool-card:first-child {
+    border-top: none;
+  }
+
+  .recent-articles-body {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .recent-articles-body .play-card {
+    min-height: 0;
+  }
+
+  .articles-panel .three-col-headings,
+  .predictor-panel .three-col-headings,
+  .breakdown-panel .three-col-headings {
+    display: none;
+  }
+
+  .rp-row .rp-left-text,
+  .rp-row .link-text,
+  .rp-row .rp-image-cell {
+    padding: 12px;
+  }
+
+  .rp-row .rp-image-cell {
+    padding-top: 0;
+  }
+
+  .rp-preview {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .panel-table th,
+  .panel-table td {
+    min-height: 36px;
+    padding: 0.35rem 0.45rem;
+  }
+
+  .favorite-players-panel .panel-table th,
+  .favorite-players-panel .panel-table td {
+    min-height: 21px;
+    padding: 0.1rem 0.3rem;
+  }
+
+  .link-text a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+  }
+
+  .monthly-chart-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 390px) {
+  .sheet-top-left,
+  .sheet-top-right {
+    padding: 0.45rem 0.5rem;
+  }
+
+  .game-name,
+  .game-date {
+    font-size: 0.72rem;
+  }
+
+  .now-playing-card {
     grid-template-columns: 1fr;
   }
 
@@ -1530,10 +2069,6 @@ const formattedDate = `${month}/${day}/${year}`;
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
-  }
-
-  .monthly-chart-grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>
