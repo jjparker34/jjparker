@@ -1705,6 +1705,42 @@ const formattedDate = `${month}/${day}/${year}`;
     height: 100%;
     aspect-ratio: auto;
   }
+
+  .col-left {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .col-right {
+    display: grid;
+    grid-template-rows: 110px 160px minmax(0, 1fr);
+    min-height: 0;
+  }
+
+  .col-left .topsters-panel,
+  .col-right .topsters-panel,
+  .col-right > .panel {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .topsters-content,
+  .monthly-chart-content,
+  .monthly-chart-card {
+    min-height: 0;
+  }
+
+  .col-left .topsters-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .monthly-chart-grid {
+    width: auto;
+    height: 0;
+  }
 }
 
 @media (max-width: 900px) {
