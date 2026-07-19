@@ -145,51 +145,34 @@ const formattedDate = `${month}/${day}/${year}`;
           <!-- MIDDLE COLUMN -->
           <div class="col col-middle">
 
-            <!-- 1ST & 10 -->
-            <section class="panel tall predictor-panel">
-              <div class="panel-header yellow-header">1st &amp; 10</div>
+            <!-- TOOLS -->
+            <section class="panel tools-panel">
+              <div class="panel-header yellow-header">TOOLS</div>
 
-              <div class="three-col-headings">
-                <span>Left</span><span>Middle</span><span>Right</span>
-              </div>
-
-              <!-- special class rp-row added here -->
-              <div class="three-col-body rp-row">
-                <!-- LEFT -->
-                <div class="rp-left-text">
-                <div class="rp-title">Try out my Run Pass tool:</div>
-                <div class="rp-desc">
-                  Upload your play-by-play data and get run or pass predictions based on situation
-                  and team tendencies. Model Trained using XGBoost with high accuracy.
-                </div>
-              </div>
-
-                <!-- MIDDLE -->
-                <div class="link-text">
-                  <a
-                    href="https://jjparker34.shinyapps.io/hsrpshiny/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    
-                   XGBoost Run Pass Predictor
+              <div class="tools-grid">
+                <article class="tool-card">
+                  <div class="tool-copy">
+                    <div class="tool-kicker">1st &amp; 10</div>
+                    <div class="tool-title">Run Pass Predictor</div>
+                    <div class="tool-description">Predict run or pass from situation and team tendencies.</div>
+                    <a class="tool-link" href="https://jjparker34.shinyapps.io/hsrpshiny/" target="_blank" rel="noopener noreferrer">Open predictor</a>
+                  </div>
+                  <a class="tool-preview-link" href="https://jjparker34.shinyapps.io/hsrpshiny/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/rpPredict.png" alt="Run/Pass Predictor Preview" class="tool-preview" />
                   </a>
-                </div>
+                </article>
 
-                <!-- RIGHT -->
-                <div class="rp-image-cell">
-                  <a
-                    href="https://jjparker34.shinyapps.io/hsrpshiny/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img 
-                      src="/images/rpPredict.png"
-                      alt="Run/Pass Predictor Preview"
-                      class="rp-preview"
-                    />
+                <article class="tool-card">
+                  <div class="tool-copy">
+                    <div class="tool-kicker">2nd AND 4–6</div>
+                    <div class="tool-title">Breakdown Builder</div>
+                    <div class="tool-description">Organize opponent tendencies and build reports for your staff.</div>
+                    <a class="tool-link" href="https://breakdowngen.onrender.com/" target="_blank" rel="noopener noreferrer">Open builder</a>
+                  </div>
+                  <a class="tool-preview-link" href="https://breakdowngen.onrender.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="/images/breakdownBuilder.png" alt="Breakdown Builder preview" class="tool-preview" />
                   </a>
-                </div>
+                </article>
               </div>
             </section>
 
@@ -197,11 +180,6 @@ const formattedDate = `${month}/${day}/${year}`;
             <!-- RECENT ARTICLES -->
             <section class="panel tall second-710-panel articles-panel">
               <div class="panel-header yellow-header">RECENT ARTICLES</div>
-
-              <!-- NEW LEFT / MIDDLE / RIGHT HEADINGS -->
-              <div class="three-col-headings">
-                <span>Left</span><span>Middle</span><span>Right</span>
-              </div>
 
               <div class="three-col-body recent-articles-body">
                 
@@ -317,7 +295,7 @@ const formattedDate = `${month}/${day}/${year}`;
 
 
             <!-- 2ND AND 4–6 -->
-            <section class="panel tall breakdown-panel">
+            <section class="panel tall breakdown-panel" hidden>
               <div class="panel-header yellow-header">2nd AND 4–6</div>
 
               <div class="three-col-headings">
@@ -1272,6 +1250,86 @@ const formattedDate = `${month}/${day}/${year}`;
   background: white;
 }
 
+.tools-panel,
+.articles-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  flex: 1;
+  min-height: 0;
+}
+
+.tool-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 42%);
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.45rem;
+  border-left: 1px solid #000;
+}
+
+.tool-card:first-child {
+  border-left: none;
+}
+
+.tool-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tool-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tool-title {
+  margin-top: 0.1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.tool-description {
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.tool-link {
+  margin-top: auto;
+  width: fit-content;
+  padding-top: 0.35rem;
+  color: #0050c8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tool-link:hover {
+  text-decoration: underline;
+}
+
+.tool-preview-link {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tool-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 140px;
+  border: 1px solid #000;
+  object-fit: contain;
+}
+
 .recent-articles-body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);   /* 3 even columns */
@@ -1418,27 +1476,26 @@ const formattedDate = `${month}/${day}/${year}`;
     height: 100svh;
     min-height: 0;
     padding: 1rem;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: stretch;
     overflow: hidden;
     box-sizing: border-box;
   }
 
   .sheet {
-    width: 142.857143%;
-    max-width: none;
-    height: calc(142.857143svh - 2.857143rem);
+    width: 100%;
+    max-width: 1440px;
+    height: calc(100svh - 2rem);
     min-height: 0;
     overflow: hidden;
     box-sizing: border-box;
-    flex: 0 0 auto;
-    transform: scale(0.7);
-    transform-origin: top left;
+    flex: 1 1 auto;
+    transform: none;
   }
 
   .sheet-grid {
     min-height: 0;
-    grid-template-columns: 380px minmax(0, 1fr) 380px;
+    grid-template-columns: 230px minmax(0, 1fr) 250px;
   }
 
   .sheet-title {
@@ -1447,8 +1504,8 @@ const formattedDate = `${month}/${day}/${year}`;
 
   .about-me-static {
     min-height: 0;
-    font-size: 0.84rem;
-    line-height: 1.2;
+    font-size: 0.72rem;
+    line-height: 1.15;
   }
 
   .recent-articles-body {
@@ -1514,6 +1571,106 @@ const formattedDate = `${month}/${day}/${year}`;
   .monthly-chart-status,
   .monthly-chart-period {
     font-size: 0.65rem;
+  }
+
+  .tools-panel {
+    flex: 0 0 172px;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-card {
+    grid-template-columns: minmax(0, 1fr) 145px;
+    gap: 0.35rem;
+    padding: 0.35rem;
+  }
+
+  .tool-kicker {
+    font-size: 0.62rem;
+  }
+
+  .tool-title {
+    font-size: 0.88rem;
+  }
+
+  .tool-description {
+    margin-top: 0.2rem;
+    font-size: 0.7rem;
+    line-height: 1.15;
+  }
+
+  .tool-link {
+    padding-top: 0.2rem;
+    font-size: 0.68rem;
+  }
+
+  .tool-preview {
+    max-height: 112px;
+  }
+
+  .articles-panel {
+    flex: 0 0 198px;
+  }
+
+  .recent-articles-body {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, 1fr);
+  }
+
+  .play-card-link,
+  .play-card {
+    min-height: 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .play-note {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .col-left .topsters-panel,
+  .col-right .topsters-panel {
+    flex: 1;
+  }
+
+  .now-playing-card {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 0.4rem;
+    padding: 0.4rem;
+  }
+
+  .now-playing-artwork {
+    width: 58px;
+    height: 58px;
+  }
+
+  .now-playing-status,
+  .now-playing-link {
+    font-size: 0.62rem;
+  }
+
+  .now-playing-track {
+    font-size: 0.82rem;
+  }
+
+  .now-playing-artist,
+  .now-playing-album {
+    font-size: 0.68rem;
+  }
+
+  .panel-table {
+    font-size: 0.68rem;
+  }
+
+  .panel-table th,
+  .panel-table td {
+    height: 16px;
   }
 }
 
@@ -1700,6 +1857,20 @@ const formattedDate = `${month}/${day}/${year}`;
   .recent-articles-body,
   .three-col-body.rp-row {
     grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card {
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 42%);
+    border-left: none;
+    border-top: 1px solid #000;
+  }
+
+  .tool-card:first-child {
+    border-top: none;
   }
 
   .recent-articles-body {
