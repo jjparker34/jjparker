@@ -1574,7 +1574,7 @@ const formattedDate = `${month}/${day}/${year}`;
   }
 
   .tools-panel {
-    flex: 0 0 172px;
+    flex: 0 0 160px;
   }
 
   .tools-grid {
@@ -1611,7 +1611,7 @@ const formattedDate = `${month}/${day}/${year}`;
   }
 
   .articles-panel {
-    flex: 0 0 198px;
+    flex: 0 0 180px;
   }
 
   .recent-articles-body {
@@ -1671,6 +1671,40 @@ const formattedDate = `${month}/${day}/${year}`;
   .panel-table th,
   .panel-table td {
     height: 16px;
+  }
+
+  .col-middle .panel:last-child {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .col-middle .panel:last-child .three-col-body {
+    min-height: 0;
+    grid-auto-rows: minmax(0, 1fr);
+  }
+
+  .col-middle .panel:last-child .cell {
+    min-height: 0;
+    padding: 0.1rem 0.25rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .col-middle .panel:last-child .call-cell {
+    font-size: 0.68rem;
+    line-height: 1;
+  }
+
+  .monthly-chart-grid {
+    aspect-ratio: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .monthly-chart-tile {
+    height: 100%;
+    aspect-ratio: auto;
   }
 }
 
