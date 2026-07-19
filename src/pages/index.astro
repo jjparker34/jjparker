@@ -1497,12 +1497,15 @@ const formattedDate = `${month}/${day}/${year}`;
 
 @media (max-width: 900px) {
   .page {
+    display: block;
+    min-height: 0;
     padding: 0.75rem;
   }
 
   .sheet {
     height: auto;
     min-height: auto;
+    overflow: visible;
   }
 
   .sheet-top {
