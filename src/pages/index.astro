@@ -377,7 +377,7 @@ const formattedDate = `${month}/${day}/${year}`;
             </section>
 
             <!-- Favorite Players -->
-            <section class="panel">
+            <section class="panel favorite-players-panel">
               <div class="panel-header green-header">Favorite Players</div>
               <table class="panel-table fav-table">
                 <tr>
@@ -1714,7 +1714,7 @@ const formattedDate = `${month}/${day}/${year}`;
 
   .col-right {
     display: grid;
-    grid-template-rows: 110px 160px minmax(0, 1fr);
+    grid-template-rows: 110px 140px minmax(0, 1fr);
     min-height: 0;
   }
 
@@ -1740,6 +1740,22 @@ const formattedDate = `${month}/${day}/${year}`;
   .monthly-chart-grid {
     width: auto;
     height: 0;
+  }
+
+  .favorite-players-panel .panel-header {
+    padding: 0.15rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .favorite-players-panel .panel-table {
+    font-size: 0.64rem;
+  }
+
+  .favorite-players-panel .panel-table th,
+  .favorite-players-panel .panel-table td {
+    height: 14px;
+    min-height: 0;
+    padding: 0.05rem 0.2rem;
   }
 }
 
@@ -1868,6 +1884,21 @@ const formattedDate = `${month}/${day}/${year}`;
     padding: 0.5rem;
   }
 
+  .favorite-players-panel .panel-header {
+    padding: 0.2rem 0.35rem;
+    font-size: 0.8rem;
+  }
+
+  .favorite-players-panel .panel-table {
+    font-size: 0.76rem;
+  }
+
+  .favorite-players-panel .panel-table th,
+  .favorite-players-panel .panel-table td {
+    min-height: 21px;
+    padding: 0.1rem 0.3rem;
+  }
+
 }
 
 /* Keep the compact call-sheet grid through small laptops and tablet-sized windows.
@@ -1976,6 +2007,12 @@ const formattedDate = `${month}/${day}/${year}`;
   .panel-table td {
     min-height: 36px;
     padding: 0.35rem 0.45rem;
+  }
+
+  .favorite-players-panel .panel-table th,
+  .favorite-players-panel .panel-table td {
+    min-height: 21px;
+    padding: 0.1rem 0.3rem;
   }
 
   .link-text a {
