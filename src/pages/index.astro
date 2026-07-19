@@ -1619,7 +1619,9 @@ const formattedDate = `${month}/${day}/${year}`;
 
 }
 
-@media (max-width: 640px) {
+/* Keep the compact call-sheet grid through small laptops and tablet-sized windows.
+   The one-column treatment is reserved for phone-width screens. */
+@media (max-width: 520px) {
   .page {
     padding: 0;
   }
